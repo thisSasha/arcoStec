@@ -34,7 +34,7 @@ function domToObject(element) {
 
 export function setPost(newPost) {
     window.localStorage.setItem('post', JSON.stringify(domToObject(newPost)));
-    window.open('/post.html');
+    window.open('https://thissasha.github.io/post.html');
 }
 
 let language = 'ru';

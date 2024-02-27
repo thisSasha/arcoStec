@@ -10,16 +10,18 @@
 }
 
 * {
-    transition: 600ms;
+    transition: 400ms;
 }
 
 body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    font-family: 'Inter';
+    font-weight: 400;
+    font-family: 'Roboto';
     padding: 0;
     margin: 0;
+    font-weight: 410;
     width: 100vw;
 }
 
@@ -36,7 +38,6 @@ body {
     border-bottom: 1px solid #e0e0e0;
     width: 80vw;
     max-width: 1200px;
-    padding: 0;
     margin: 0;
     top: 0;
     height: 10vh;
@@ -51,6 +52,13 @@ body {
     background-repeat: no-repeat;
     height: 32%;
     width: 12%;
+    box-sizing: border-box;
+}
+
+.nav__answer:hover {
+    transition: 300ms;
+    color: black;
+    background: transparent;
 }
 
 .nav__cross {
@@ -63,7 +71,7 @@ body {
 
 .nav__titles {
     width: 44%;
-    font-size: 0.7em;
+    font-size: 0.8em;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -76,6 +84,12 @@ body {
     font-size: 0.9em;
 }
 
+.nav__phoneNumber:hover {
+    cursor: pointer;
+    text-decoration: underline 1.5px solid #EC671F;
+    transform: scale(105%);
+}
+
 .nav__titles.active {
     display: flex;
     opacity: 1;
@@ -86,6 +100,13 @@ body {
 .nav__title._active {
     border-bottom: solid 2px #EC671F;
     transform: translateY(1px);
+}
+
+.nav__title:hover {
+    color: #EC671F;
+    font-weight: 430;
+    cursor: pointer;
+    transform: scale(105%);
 }
 
 .nav__cross {
@@ -104,13 +125,69 @@ body {
     font-size: 0.9em;
 }
 
+.nav__logo:hover {
+    transform: scale(110%);
+    cursor: pointer;
+}
+
+
 .nav__answer {
     background-color: #EC671F;
-    border: 0;
     color: #f8f8f8;
     border-radius: 12px;
     padding: 4px 24px;
+    border: #EC671F 2px solid;
+    height: 50%;
 }
+
+
+.nav__answer:active {
+    background-color: #EC671F;
+    color: white;
+    transform: scale(90%);
+}
+
+select:hover {
+    color: #EC671F;
+    font-size: 1.1em;
+}
+
+
+select {
+    display: block;
+    padding: 6px 8px;
+    border: 0;
+    background: none;
+    /* убираем фон */
+    border: 1px solid #ccc;
+    /* рамка */
+    border-radius: 3px;
+    /* скругление полей формы */
+    -webkit-appearance: none;
+    /* Chrome */
+    -moz-appearance: none;
+    /* Firefox */
+    appearance: none;
+    /* убираем дефолнтные стрелочки */
+    font-family: inherit;
+    /* наследует от родителя */
+    font-size: 1rem;
+    color: #444;
+}
+
+
+select:focus-visible {
+    outline: 0;
+}
+
+select:focus {
+    outline: 0;
+}
+
+option {
+    border: 0;
+}
+
 
 
 
@@ -136,11 +213,17 @@ header {
     background-image: url(../img/bg1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left top;
     height: 36vh;
+    margin-bottom: 48px;
     border-radius: 24px;
     width: 100%;
 }
+
+header:hover {
+    box-shadow: #444 0 0px 4px;
+}
+
 
 .header__social {
     position: absolute;
@@ -153,15 +236,28 @@ header {
 }
 
 .header__social>* {
+    transition: 300ms;
     background-color: white;
     color: black;
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 120%;
+    height: 10%;
+    width: 40%;
     border-radius: 12px;
     padding: 4px 12px 4px 6px;
     border: 0;
+    border: 3px solid white;
+}
+
+.header__social>*:hover {
+    transform: scale(105%);
+}
+
+.header__social>*:active {
+    color: #EC671F;
+    font-weight: 430;
+    border-color: #EC671F;
 }
 
 .icon.telegram {
@@ -199,8 +295,10 @@ header {
 }
 
 .projects__post {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 2px;
     border-radius: 12px;
-    height: 56vh;
+    height: 36vh;
+    text-align: left;
     max-height: 300px;
     position: relative;
 }
@@ -240,10 +338,10 @@ header {
 .post__info {
     overflow: hidden;
     display: block;
-    font-size: 0.9em;
+    font-size: 0.85em;
     height: 20%;
-    margin: 1px 4px 0 4px;
-    text-align: center;
+    margin: 1px 4px 0 4%;
+    text-align: left;
 }
 
 .post__price {
